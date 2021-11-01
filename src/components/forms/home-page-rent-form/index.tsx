@@ -1,80 +1,67 @@
 import Input from '../input';
-import { locations } from '../../../constants/locations';
-
-type RentFormValues = {
-	pickUpLocation: string;
-	returnLocation: string;
-	pickUpDate: string;
-	pickUpTime: string;
-	returnDate: string;
-	returnTime: string;
-	category: string;
-	size: string;
-	wheelSize: number;
-	suspension: string;
-	brand?: string;
-	model?: string;
-	material?: string;
-};
+import Button from '../button';
+import {
+	LOCATIONS,
+	CATEGORIES,
+	WHEEL_SIZES,
+	FRAME_SIZES,
+	SUSPENSION,
+} from '../../../constants';
 
 const HomePageRentForm: React.FC = () => {
+	const onSubmitHandler = (event: React.FormEvent<EventTarget>) => {
+		event.preventDefault();
+	};
+
 	return (
-		<article>
-			<h3>Contact us</h3>
-
-			<datalist id='locations'>{locations}</datalist>
-
-			<form>
+		<form>
+			<datalist id='locations'>{LOCATIONS}</datalist>
+			<fieldset>
 				<Input
 					title='Pick-up location'
-					id='pickUpLocation'
-					inputType='text'
+					name='pickUpLocation'
 					dataList='locations'
 				/>
-
 				<Input
 					title='Return location'
-					id='returnLocation'
-					inputType='text'
+					name='returnLocation'
 					dataList='locations'
 				/>
-
-				<label htmlFor='pickUpDate'>Pick-up date</label>
-				<input type='date' name='pickUpDate' id='pickUpDate' />
-
-				<label htmlFor='pickUpTime'>Pick-up time</label>
-				<input type='time' name='pickUpTime' id='pickUpTime' />
-
-				<label htmlFor='returnDate'>Return date</label>
-				<input type='date' name='returnDate' id='returnDate' />
-
-				<label htmlFor='returnTime'>Return time</label>
-				<input type='time' name='returnTime' id='returnTime' />
-
-				<label htmlFor='category'>Category</label>
-				<input type='text' name='category' id='category' />
-
-				<label htmlFor='size'>Size</label>
-				<input type='text' name='size' id='size' />
-
-				<label htmlFor='wheelSize'>Wheel size</label>
-				<input type='number' name='wheelSize' id='wheelSize' />
-
-				<label htmlFor='suspension'>Suspension</label>
-				<input type='text' name='suspension' id='suspension' />
-
-				<label htmlFor='brand'>Brand</label>
-				<input type='text' name='brand' id='brand' />
-
-				<label htmlFor='model'>Model</label>
-				<input type='text' name='model' id='model' />
-
-				<label htmlFor='material'>Material</label>
-				<input type='text' name='material' id='material' />
-
-				<button type='submit'>SHOW BIKES</button>
-			</form>
-		</article>
+			</fieldset>
+			<fieldset>
+				<Input title='Pick-up date' name='pickUpDate' inputType='date' />
+				<Input title='Pick-up time' name='pickUpTime' inputType='time' />
+				<Input title='Return date' name='returnDate' inputType='date' />
+				<Input title='Return time' name='returnTime' inputType='time' />
+			</fieldset>
+			<fieldset>
+				<Input
+					title='Category'
+					name='category'
+					options={CATEGORIES}
+					inputType='select'
+				/>
+				<Input
+					title='Size'
+					name='size'
+					options={FRAME_SIZES}
+					inputType='select'
+				/>
+				<Input
+					title='Wheel size'
+					name='wheelSize'
+					options={WHEEL_SIZES}
+					inputType='select'
+				/>
+				<Input
+					title='Suspension'
+					name='suspension'
+					options={SUSPENSION}
+					inputType='select'
+				/>
+			</fieldset>
+			<Button title='SHOW BIKES' onClick={onSubmitHandler} />
+		</form>
 	);
 };
 

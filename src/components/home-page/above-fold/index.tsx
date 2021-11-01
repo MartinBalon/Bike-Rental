@@ -5,7 +5,7 @@ const AboveFold: React.FC = () => {
 		<article>
 			<h1>Rent a bike</h1>
 			<HomePageRentForm />
-			<h3>scroll down</h3>
+			<p>scroll down</p>
 		</article>
 	);
 };

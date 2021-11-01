@@ -1,7 +1,12 @@
+import AboutUsLogo from './logos/AboutUsLogo';
+import HowItWorksLogo from './logos/HowItWorksLogo';
+import BikesAndLocationsLogo from './logos/BikesAndLocationsLogo';
+
 const AboutUs: React.FC = () => {
 	return (
 		<article>
 			<section>
+				<AboutUsLogo />
 				<h2>ABOUT US</h2>
 				<p>
 					&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -27,6 +32,7 @@ const AboutUs: React.FC = () => {
 				</p>
 			</section>
 			<section>
+				<HowItWorksLogo />
 				<h2>HOW IT WORKS</h2>
 				<p>
 					&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -52,6 +58,7 @@ const AboutUs: React.FC = () => {
 				</p>
 			</section>
 			<section>
+				<BikesAndLocationsLogo />
 				<h2>BIKES &amp; LOCATIONS</h2>
 				<p>
 					&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
