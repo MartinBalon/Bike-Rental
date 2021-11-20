@@ -1,4 +1,7 @@
-import Input from '../input';
+import SelectInput from '../inputs/select-input';
+import DateInput from '../inputs/date-input';
+import TimeInput from '../inputs/time-input';
+import { StyledFieldSet, StyledForm } from './styled';
 import Button from '../button';
 import {
 	LOCATIONS,
@@ -14,54 +17,41 @@ const HomePageRentForm: React.FC = () => {
 	};
 
 	return (
-		<form>
-			<datalist id='locations'>{LOCATIONS}</datalist>
-			<fieldset>
-				<Input
+		<StyledForm>
+			<StyledFieldSet>
+				<SelectInput
 					title='Pick-up location'
 					name='pickUpLocation'
-					dataList='locations'
+					options={LOCATIONS}
 				/>
-				<Input
+				<SelectInput
 					title='Return location'
 					name='returnLocation'
-					dataList='locations'
+					options={LOCATIONS}
 				/>
-			</fieldset>
-			<fieldset>
-				<Input title='Pick-up date' name='pickUpDate' inputType='date' />
-				<Input title='Pick-up time' name='pickUpTime' inputType='time' />
-				<Input title='Return date' name='returnDate' inputType='date' />
-				<Input title='Return time' name='returnTime' inputType='time' />
-			</fieldset>
-			<fieldset>
-				<Input
-					title='Category'
-					name='category'
-					options={CATEGORIES}
-					inputType='select'
-				/>
-				<Input
-					title='Size'
-					name='size'
-					options={FRAME_SIZES}
-					inputType='select'
-				/>
-				<Input
+			</StyledFieldSet>
+			<StyledFieldSet>
+				<DateInput title='Pick-up date' name='pickUpDate' />
+				<TimeInput title='Pick-up time' name='pickUpTime' />
+				<DateInput title='Return date' name='returnDate' />
+				<TimeInput title='Return time' name='returnTime' />
+			</StyledFieldSet>
+			<StyledFieldSet>
+				<SelectInput title='Category' name='category' options={CATEGORIES} />
+				<SelectInput title='Size' name='size' options={FRAME_SIZES} />
+				<SelectInput
 					title='Wheel size'
 					name='wheelSize'
 					options={WHEEL_SIZES}
-					inputType='select'
 				/>
-				<Input
+				<SelectInput
 					title='Suspension'
 					name='suspension'
 					options={SUSPENSION}
-					inputType='select'
 				/>
-			</fieldset>
+			</StyledFieldSet>
 			<Button title='SHOW BIKES' onClick={onSubmitHandler} />
-		</form>
+		</StyledForm>
 	);
 };
 

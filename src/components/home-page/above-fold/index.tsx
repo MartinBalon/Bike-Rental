@@ -1,12 +1,13 @@
 import HomePageRentForm from '../../forms/home-page-rent-form';
+import { StyledArticle, StyledHeading, StyledParagraph } from './styled';
 
 const AboveFold: React.FC = () => {
 	return (
-		<article>
-			<h1>Rent a bike</h1>
+		<StyledArticle>
+			<StyledHeading>Rent a bike</StyledHeading>
 			<HomePageRentForm />
-			<p>scroll down</p>
-		</article>
+			<StyledParagraph>scroll down</StyledParagraph>
+		</StyledArticle>
 	);
 };
 

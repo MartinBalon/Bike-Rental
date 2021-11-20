@@ -1,11 +1,4 @@
-export const LOCATIONS = (
-	<>
-		<option value='Teplice' />
-		<option value='Praha' />
-		<option value='Brno' />
-		<option value='Plzen' />
-	</>
-);
+export const LOCATIONS: string[] = ['Teplice', 'Praha', 'Brno', 'Plzen'];
 
 export const CATEGORIES: string[] = [
 	'Cross Country (XC)',
@@ -42,4 +35,23 @@ export const MODELS: Model[] = [
 	{ brand: 'Cube', models: ['Two15', 'dwa'] },
 	{ brand: 'YT', models: ['Tues', 'Capra'] },
 	{ brand: 'Propain', models: ['Rage', 'Spindrift'] },
+];
+
+export const MONTHS: string[] = [
+	'January',
+	'February',
+	'March',
+	'April',
+	'May',
+	'June',
+	'July',
+	'August',
+	'September',
+	'October',
+	'November',
+	'December',
+];
+
+export const MONTHS_LENGTH: number[] = [
+	31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31,
 ];
