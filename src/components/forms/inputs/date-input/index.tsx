@@ -6,15 +6,15 @@ import DatePicker from './date-picker';
 const DateInput: React.FC<InputProps> = ({ name, title }) => {
 	const [showDatePicker, setShowDatePicker] = useState(false);
 
-	const showDatePickerHandler = () => {
+	const datePickerHandler = () => {
 		setShowDatePicker((prevState) => !prevState);
 	};
 
 	return (
 		<>
 			<StyledLabel htmlFor={name}>{title}</StyledLabel>
-			<StyledInput onClick={showDatePickerHandler} />
-			{showDatePicker && <DatePicker />}
+			<StyledInput onClick={datePickerHandler} />
+			{showDatePicker && <DatePicker closeDatePicker={datePickerHandler} />}
 		</>
 	);
 };

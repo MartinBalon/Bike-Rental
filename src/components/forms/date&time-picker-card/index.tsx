@@ -1,9 +1,5 @@
+import { DateAndTimePickerCardProps } from '../../../common/types';
 import { Container, ArrowUp, Wrapper } from './styled';
-
-type DateAndTimePickerCardProps = React.PropsWithChildren<{
-	children: JSX.Element[] | JSX.Element;
-	pickerType: string;
-}>;
 
 const DateAndTimePickerCard = ({
 	children,

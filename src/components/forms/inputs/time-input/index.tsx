@@ -4,17 +4,17 @@ import { StyledInput, StyledLabel } from '../basic-input/styled';
 import TimePicker from './time-picker';
 
 const TimeInput: React.FC<InputProps> = ({ name, title }) => {
-	const [showTimePicker, setTimePicker] = useState(false);
+	const [showTimePicker, setShowTimePicker] = useState(false);
 
-	const showDatePickerHandler = () => {
-		setTimePicker((prevState) => !prevState);
+	const timePickerHandler = () => {
+		setShowTimePicker((prevState) => !prevState);
 	};
 
 	return (
 		<>
 			<StyledLabel htmlFor={name}>{title}</StyledLabel>
-			<StyledInput onClick={showDatePickerHandler} />
-			{showTimePicker && <TimePicker />}
+			<StyledInput onClick={timePickerHandler} />
+			{showTimePicker && <TimePicker closeTimePicker={timePickerHandler} />}
 		</>
 	);
 };

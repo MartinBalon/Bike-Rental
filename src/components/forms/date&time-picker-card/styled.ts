@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 import { fontColor, robotFont } from '../../../common/theme';
-
-type ContainerProps = {
-	pickerType: string;
-};
+import { ContainerProps } from '../../../common/types';
 
 export const Container = styled.div<ContainerProps>`
 	position: absolute;
-	width: 260px;
-	height: ${(props) => (props.pickerType === 'datePicker' ? '290px' : '140px')};
+	width: ${(props) => (props.pickerType === 'datePicker' ? '260px' : '160px')};
+	height: ${(props) => (props.pickerType === 'datePicker' ? '340px' : '200px')};
 	left: 0;
 	right: 0;
 	margin-left: auto;

@@ -3,7 +3,13 @@ import { StyledButton } from './styled';
 
 const Button: React.FC<ButtonProps> = ({ title, onClick }: ButtonProps) => {
 	return (
-		<StyledButton onClick={(event) => onClick(event)} type='submit'>
+		<StyledButton
+			onClick={(event) => {
+				event.preventDefault();
+				onClick(event);
+			}}
+			type='submit'
+		>
 			{title}
 		</StyledButton>
 	);

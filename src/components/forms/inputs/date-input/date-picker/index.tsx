@@ -4,8 +4,13 @@ import { useEffect, useState } from 'react';
 import { MONTHS } from '../../../../../constants';
 import DateAndTimePickerCard from '../../../date&time-picker-card';
 import { DateWrapper, Day, DaysOfTheWeek, DisplayDate } from './styled';
+import Button from '../../../button';
 
-const DatePicker: React.FC = () => {
+type DatePickerProps = {
+	closeDatePicker: () => void;
+};
+
+const DatePicker = ({ closeDatePicker }: DatePickerProps) => {
 	const [day, setDay] = useState(0);
 	const [month, setMonth] = useState(0);
 	const [year, setYear] = useState(0);
@@ -67,6 +72,7 @@ const DatePicker: React.FC = () => {
 				year={year}
 				leapYear={isLeapYear}
 			/>
+			<Button title='OK' onClick={closeDatePicker} />
 		</DateAndTimePickerCard>
 	);
 };

@@ -28,6 +28,11 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	options?: string[] | number[];
 }
 
+export type DateAndTimePickerCardProps = React.PropsWithChildren<{
+	children: JSX.Element[] | JSX.Element;
+	pickerType: string;
+}>;
+
 export type DateObject = {
 	id: number;
 	dayOfTheMonth: number;
@@ -42,6 +47,15 @@ export type DatePickerListProps = {
 	year: number;
 	leapYear: boolean;
 };
+
 export type ArrowProps = {
 	onClick: (paramater: string) => void;
+};
+
+export type TimePickerProps = {
+	closeTimePicker: () => void;
+};
+
+export type ContainerProps = {
+	pickerType: string;
 };

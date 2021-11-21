@@ -55,3 +55,5 @@ export const MONTHS: string[] = [
 export const MONTHS_LENGTH: number[] = [
 	31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31,
 ];
+
+export const OPENING_HOURS: number[] = [7, 19];
